@@ -38,8 +38,8 @@ Open SSH
 	# Login to the router terminal Success 
 	$ cd /tmp &&rm -rf miwifi.sh && wget https://raw.githubusercontent.com/Chyi341152/xmr3ss/master/miwifi.sh && chmod +x miwifi.sh && sh ./miwifi.sh
 ```
-Install Screen shot:
-![Install Screenshot](https://raw.githubusercontent.com/Chyi341152/xmr3ss/master/xmr3ss/imgs/10.34.52.PM.png)
+Install ScreenShot:
+![Install Screenshot](https://github.com/Chyi341152/xmr3ss/blob/master/imgs/10.34.52.PM.png)
 
 
 ## License
