@@ -3,7 +3,8 @@ Description=Shadowsocks Client
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/sslocal -c /etc/shadowsocks.json
+User=root
+ExecStart=/bin/bash -c "/usr/local/bin/python3 /usr/local/bin/sslocal -c /etc/shadowsocks.json >/var/log/shadowsocks-client.log 2>&1"
 Restart=always
 
 [Install]
