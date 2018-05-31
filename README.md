@@ -41,6 +41,12 @@ Open SSH
 Install ScreenShot:
 ![Install Screenshot](https://github.com/Chyi341152/xmr3ss/blob/master/imgs/10.34.52.PM.png)
 
+## Shadowsocks systemd service 
+
+1. copy shadowsocks-ssserver.service to _/etc/systemd/system/shadowsocks-server.service_
+2. edit _/etc/shadowsocks.json_ to config shadowsocks 
+3. exec _sudo systemctl enable shadowsocks-server_ and _systemctl start shadowsocks-server_
+
 
 ## License
 
