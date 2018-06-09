@@ -47,6 +47,16 @@ Install ScreenShot:
 2. edit _/etc/shadowsocks.json_ to config shadowsocks 
 3. exec _sudo systemctl enable shadowsocks-server_ and _systemctl start shadowsocks-server_
 
+## SS make Google Home mini connect to Google Assistant 
+
+1. for google home 
+
+```code
+	$ iptables -t nat -A PREROUTING -s 192.168.1.1/24 -p udp --dport 53 -j DNAT --to 192.168.1.1
+	$ iptables -t nat -A PREROUTING -s 192.168.1.1/24 -p tcp --dport 53 -j DNAT --to 192.168.1.1
+	$ iptables -I PREROUTING -t nat -p udp -d 8.8.4.4 --dport 53 -j REDIRECT --to-ports 1053
+	$ iptables -I PREROUTING -t nat -p udp -d 8.8.8.8 --dport 53 -j REDIRECT --to-ports 1053
+```
 
 ## License
 
