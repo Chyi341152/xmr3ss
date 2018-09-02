@@ -1,0 +1,23 @@
+准备：
+  $ sudo apt install openssh-server
+  防止出现“SSH tunneling: connect_to localhost port 22: Failed”
+  
+SSH隧道连接内网主机
+
+  目前公网vps ，可以作为中继连接内网主机：
+ 
+ 1. 使用SSH tunnel 
+  原理： 假设vps 地址是 8.8.8.8，内网主机通过ssh连接到vps,同时将vps上某一个大于1024以上的端口，例如：9527映射到内网主机ssh端口比如22，
+  这样在vps上访问9527端口就相当于访问树莓派的22端口，
+    $ ssh -fNR 9527:localhost:22 username@8.8.8.8 
+  上面👆命令会将vps上的9527端口映射到内网主机的22端口上 
+  
+  然后在vps上使用ssh 登陆到内网主机命令如下
+    $ ssh -p 9527 username@localhost 
+    
+  成功了，，，，
+  但是如果内网主机的ssh 因为某种原因断开，我们就无法连接到内网主机，因此我们需要将ssh断开之后自动重连，autossh，
+  我们需要autossh自动连接，就需要让树莓派可以免密码ssh登陆vps，这样重连的时候可以自动连上。
+    $ ssh-copy-id username@8.8.8.8 # 将内网主机的ssh public key添加到vps 
+    
+  
