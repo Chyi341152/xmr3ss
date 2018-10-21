@@ -51,6 +51,7 @@ Install ScreenShot:
 
 1. for google home 
 
+![](/imgs/iptables_rule_setting.png?raw=true)
 ```code
 	$ iptables -t nat -A PREROUTING -s 192.168.1.1/24 -p udp --dport 53 -j DNAT --to 192.168.1.1
 	$ iptables -t nat -A PREROUTING -s 192.168.1.1/24 -p tcp --dport 53 -j DNAT --to 192.168.1.1
