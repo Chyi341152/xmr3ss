@@ -56,6 +56,12 @@ Install ScreenShot:
 	$ iptables -t nat -A PREROUTING -s 192.168.1.1/24 -p tcp --dport 53 -j DNAT --to 192.168.1.1
 	$ iptables -I PREROUTING -t nat -p udp -d 8.8.4.4 --dport 53 -j REDIRECT --to-ports 1053
 	$ iptables -I PREROUTING -t nat -p udp -d 8.8.8.8 --dport 53 -j REDIRECT --to-ports 1053
+	
+	#iptables rules forever avalid 
+	$ iptables-save > /etc/iptables-script # save iptables rule 
+	$ iptables-retore > /etc/iptables-script # recorver rule 
+	
+	$ echo '/usr/sbin/iptables-restart /etc/iptables-script' >> /etc/rc.local 
 ```
 
 ## License
