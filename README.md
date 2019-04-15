@@ -36,7 +36,7 @@ Open SSH
 	# Input the root password, 
 	$ passwd # change root password recommanded 
 	# Login to the router terminal Success 
-	$ cd /tmp &&rm -rf miwifi.sh && wget https://raw.githubusercontent.com/Chyi341152/xmr3ss/master/miwifi.sh && chmod +x miwifi.sh && sh ./miwifi.sh
+	$ cd /tmp &&rm -rf miwifi.sh && curl -O https://raw.githubusercontent.com/Chyi341152/xmr3ss/master/miwifi.sh && chmod +x miwifi.sh && sh ./miwifi.sh
 ```
 Install ScreenShot:
 ![Install Screenshot](https://github.com/Chyi341152/xmr3ss/blob/master/imgs/10.34.52.PM.png)
